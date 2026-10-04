@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharma Services Ownership Dataset 2026 | Rx Almanac</title>
+<meta name="description" content="Who owns 295 pharmaceutical services vendors: PE-backed, subsidiary, VC-backed, public, and independent, plus 35 ownership events since 2024. Searchable, downloadable, CC BY-NC 4.0.">
+<link rel="canonical" href="https://hoytgong.github.io/rxalmanac-ownership-dataset/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Rx Almanac Pharma Services Ownership Dataset (2026 snapshot)",
+  "description": "Current publicly disclosed ownership of 295 pharmaceutical services vendors and 35 dated ownership events since 2024.",
+  "url": "https://hoytgong.github.io/rxalmanac-ownership-dataset/",
+  "identifier": "https://doi.org/10.5281/zenodo.23137792",
+  "version": "2026.1",
+  "datePublished": "2026-10-04",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "isBasedOn": "https://rxalmanac.com/articles/who-owns-pharma-services-2026/",
+  "creator": {"@type": "Organization", "name": "Rx Almanac", "url": "https://rxalmanac.com/"},
+  "distribution": [
+    {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://hoytgong.github.io/rxalmanac-ownership-dataset/data/rx-almanac-pharma-services-ownership-2026.csv"},
+    {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://hoytgong.github.io/rxalmanac-ownership-dataset/data/rx-almanac-ownership-events-2024-2026.csv"}
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #FAFAF8; --surface: #FFFFFF; --surface-2: #F4F3F0; --border: #E2E8F0;
+  --text: #0F172A; --text-2: #475569; --text-3: #64748B;
+  --primary: #246DDE; --primary-hover: #1D5BD8; --primary-light: #EFF8FF;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1120; --surface: #111827; --surface-2: #1E293B; --border: #334155;
+    --text: #F1F5F9; --text-2: #CBD5E1; --text-3: #94A3B8;
+    --primary: #6EA8FE; --primary-hover: #93BFFE; --primary-light: #172954;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.65 "Plus Jakarta Sans", system-ui, sans-serif; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { color: var(--primary-hover); text-decoration: underline; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+header { padding: 40px 0 24px; }
+.label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 8px 0 12px; font-weight: 800; }
+.lead { font-size: 17px; line-height: 1.55; color: var(--text-2); max-width: 760px; margin: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.btn { display: inline-block; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 600; font-size: 14px; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn:hover { text-decoration: none; border-color: var(--primary); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 24px 0; }
+.stat { display: flex; flex-direction: column; justify-content: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.stat[aria-pressed="true"] { border-color: var(--primary); background: var(--primary-light); }
+.stat .n { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.stat .t { font-size: 13px; color: var(--text-2); }
+.bar { display: flex; height: 10px; border-radius: 6px; overflow: hidden; margin-top: 4px; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-top: 8px; }
+.tab { background: none; border: 0; padding: 10px 14px; font: inherit; font-weight: 600; color: var(--text-2); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tab[aria-selected="true"] { color: var(--primary); border-bottom-color: var(--primary); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 12px; }
+input[type=search], select { font: inherit; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); }
+input[type=search] { flex: 1 1 260px; min-width: 0; }
+.count { font-size: 13px; color: var(--text-3); }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface-2); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); cursor: pointer; white-space: nowrap; position: sticky; top: 0; }
+th[aria-sort="ascending"]::after { content: " \2191"; }
+th[aria-sort="descending"]::after { content: " \2193"; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; color: #fff; }
+.muted { color: var(--text-3); }
+section.info { margin: 40px 0; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+section.info h2 { font-size: 18px; margin: 0 0 8px; }
+section.info p { margin: 0 0 8px; color: var(--text-2); }
+pre { white-space: pre-wrap; background: var(--surface-2); padding: 12px; border-radius: 8px; font-size: 13px; margin: 0; }
+footer { border-top: 1px solid var(--border); padding: 24px 0 40px; font-size: 13px; color: var(--text-3); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="label">Rx Almanac · Open data · Version 2026.1 · Snapshot 2026-10-04</div>
+    <h1>Who owns pharma services?</h1>
+    <p class="lead">The publicly disclosed ownership of 295 pharmaceutical services vendors (hub, specialty pharmacy, copay, market access, commercialization, data and RWE, and more) and 35 ownership events since 2024. Each vendor row links to its <a href="https://rxalmanac.com/">Rx Almanac</a> profile, and each event row cites a public source.</p>
+    <div class="actions">
+      <a class="btn primary" href="data/rx-almanac-pharma-services-ownership-2026.csv" download>Download vendors CSV</a>
+      <a class="btn" href="data/rx-almanac-ownership-events-2024-2026.csv" download>Download events CSV</a>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.23137792">Zenodo DOI</a>
+      <a class="btn" href="https://rxalmanac.com/articles/who-owns-pharma-services-2026/">Read the analysis</a>
+    </div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+  <div class="bar" id="bar" aria-hidden="true"></div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-vendors" aria-selected="true">Vendors</button>
+    <button class="tab" role="tab" id="tab-events" aria-selected="false">Ownership events since 2024</button>
+  </div>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search name, parent, sponsor, city..." aria-label="Search">
+    <select id="filter" aria-label="Filter"></select>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="table-wrap"><table id="table"><thead></thead><tbody></tbody></table></div>
+
+  <section class="info">
+    <div>
+      <h2>How it was built</h2>
+      <p>Every vendor with a published Rx Almanac profile on 2026-10-04. Each value comes from that public profile; <code>ownership_type</code> is Rx Almanac's classification of it. Events were checked against their cited source pages on October 3 and 4, 2026.</p>
+      <p>Full method, field definitions and known limits are in the <a href="https://github.com/Hoytgong/rxalmanac-ownership-dataset#readme">README</a>.</p>
+    </div>
+    <div>
+      <h2>How to cite</h2>
+      <pre>Rx Almanac (2026). Rx Almanac Pharma Services Ownership Dataset (2026 snapshot), version 2026.1. Zenodo. https://doi.org/10.5281/zenodo.23137792</pre>
+      <p style="margin-top:8px">License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Corrections with a public source: hello@rxalmanac.com.</p>
+    </div>
+  </section>
+
+  <footer>
+    Ownership changes often. This is a snapshot; check each vendor's <a href="https://rxalmanac.com/">Rx Almanac</a> profile for the current value.
+  </footer>
+</div>
+
+<script>
+const TYPES = [
+  ["subsidiary", "Subsidiary", "#246DDE"],
+  ["pe-backed", "PE-backed", "#AD5529"],
+  ["independent-private", "Independent private", "#475569"],
+  ["vc-backed", "VC-backed", "#0E7C66"],
+  ["public", "Public", "#7C3AED"],
+  ["other", "Other", "#94A3B8"]
+];
+const TYPE = Object.fromEntries(TYPES.map(([k, l, c]) => [k, { label: l, color: c }]));
+
+function parseCSV(text) {
+  const rows = []; let row = [], field = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') q = false;
+      else field += c;
+    } else if (c === '"') q = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field); field = "";
+      if (row.length > 1 || row[0] !== "") rows.push(row);
+      row = [];
+    } else field += c;
+  }
+  if (field !== "" || row.length) { row.push(field); rows.push(row); }
+  const [head, ...body] = rows;
+  return body.map(r => Object.fromEntries(head.map((h, j) => [h, r[j] ?? ""])));
+}
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pill = t => `<span class="pill" style="background:${(TYPE[t] || TYPE.other).color}">${esc((TYPE[t] || { label: t }).label)}</span>`;
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+const VIEWS = {
+  vendors: {
+    cols: [
+      ["name", "Vendor", r => `<a href="${esc(r.rxalmanac_url)}">${esc(r.name)}</a>`],
+      ["ownership_type", "Ownership", r => pill(r.ownership_type)],
+      ["parent_company", "Parent", r => esc(r.parent_company) || '<span class="muted">None named</span>'],
+      ["ownership_statement", "Ownership statement", r => esc(r.ownership_statement)],
+      ["founded", "Founded", r => esc(r.founded), "num"],
+      ["headquarters", "HQ", r => esc(r.headquarters)]
+    ],
+    filterLabel: "All ownership types",
+    filterKey: "ownership_type",
+    filterOptions: () => TYPES.map(([k, l]) => [k, l]),
+    sort: ["name", 1]
+  },
+  events: {
+    cols: [
+      ["date", "Date", r => esc(r.date), "num"],
+      ["target", "Target", r => esc(r.target)],
+      ["acquirer_or_investor", "Acquirer / investor", r => esc(r.acquirer_or_investor)],
+      ["event_type", "Type", r => esc(r.event_type)],
+      ["event_description", "What happened", r => esc(r.event_description)],
+      ["public_source_url", "Source", r => `<a href="${esc(r.public_source_url)}" rel="nofollow noopener">${esc(host(r.public_source_url))}</a>`],
+      ["rxalmanac_vendor_slug", "Profile", r => `<a href="https://rxalmanac.com/vendor/${esc(r.rxalmanac_vendor_slug)}/">${esc(r.rxalmanac_vendor_slug)}</a>`]
+    ],
+    filterLabel: "All event types",
+    filterKey: "event_type",
+    filterOptions: () => [...new Set(DATA.events.map(r => r.event_type))].sort().map(t => [t, t]),
+    sort: ["date", -1]
+  }
+};
+
+const DATA = { vendors: [], events: [] };
+const state = { view: "vendors", q: "", filter: "", sort: null };
+const $ = id => document.getElementById(id);
+
+function renderStats() {
+  const total = DATA.vendors.length;
+  const counts = Object.fromEntries(TYPES.map(([k]) => [k, 0]));
+  DATA.vendors.forEach(r => { counts[r.ownership_type] = (counts[r.ownership_type] || 0) + 1; });
+  const pe = counts["pe-backed"], sub = counts.subsidiary;
+  $("stats").innerHTML =
+    `<div class="stat" style="cursor:default"><div class="n">${total}</div><div class="t">vendors</div></div>` +
+    `<div class="stat" style="cursor:default"><div class="n">${((pe + sub) / total * 100).toFixed(1)}%</div><div class="t">PE-backed or a subsidiary</div></div>` +
+    TYPES.filter(([k]) => counts[k]).map(([k, l]) =>
+      `<button class="stat" data-type="${k}" aria-pressed="false"><div class="n">${counts[k]}</div><div class="t">${l}</div></button>`).join("");
+  $("bar").innerHTML = TYPES.filter(([k]) => counts[k]).map(([k, l, c]) =>
+    `<span title="${l}: ${counts[k]}" style="flex:${counts[k]};background:${c}"></span>`).join("");
+  document.querySelectorAll(".stat[data-type]").forEach(b => b.addEventListener("click", () => {
+    const t = b.dataset.type;
+    setView("vendors");
+    state.filter = state.filter === t ? "" : t;
+    $("filter").value = state.filter;
+    render();
+  }));
+}
+
+function setView(v) {
+  if (state.view === v) return;
+  state.view = v; state.filter = ""; state.sort = null;
+  $("tab-vendors").setAttribute("aria-selected", v === "vendors");
+  $("tab-events").setAttribute("aria-selected", v === "events");
+  buildFilter(); render();
+}
+
+function buildFilter() {
+  const V = VIEWS[state.view];
+  $("filter").innerHTML = `<option value="">${V.filterLabel}</option>` +
+    V.filterOptions().map(([k, l]) => `<option value="${esc(k)}">${esc(l)}</option>`).join("");
+  $("filter").value = state.filter;
+}
+
+function render() {
+  const V = VIEWS[state.view];
+  const [sk, sd] = state.sort || V.sort;
+  const q = state.q.trim().toLowerCase();
+  const rows = DATA[state.view]
+    .filter(r => !state.filter || r[V.filterKey] === state.filter)
+    .filter(r => !q || Object.values(r).join(" ").toLowerCase().includes(q))
+    .sort((a, b) => (a[sk] || "").localeCompare(b[sk] || "", undefined, { numeric: true, sensitivity: "base" }) * sd);
+  $("table").tHead.innerHTML = "<tr>" + V.cols.map(([k, l]) =>
+    `<th data-k="${k}" ${k === sk ? `aria-sort="${sd > 0 ? "ascending" : "descending"}"` : ""}>${l}</th>`).join("") + "</tr>";
+  $("table").tBodies[0].innerHTML = rows.map(r => "<tr>" + V.cols.map(([k, , f, cls]) =>
+    `<td${cls ? ` class="${cls}"` : ""}>${f(r)}</td>`).join("") + "</tr>").join("") ||
+    `<tr><td colspan="${V.cols.length}" class="muted">No rows match.</td></tr>`;
+  $("count").textContent = `${rows.length} of ${DATA[state.view].length}`;
+  document.querySelectorAll(".stat[data-type]").forEach(b =>
+    b.setAttribute("aria-pressed", state.view === "vendors" && state.filter === b.dataset.type));
+  $("table").tHead.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k;
+    state.sort = [k, k === sk ? -sd : 1];
+    render();
+  }));
+}
+
+$("tab-vendors").addEventListener("click", () => setView("vendors"));
+$("tab-events").addEventListener("click", () => setView("events"));
+$("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+$("filter").addEventListener("change", e => { state.filter = e.target.value; render(); });
+
+Promise.all([
+  fetch("data/rx-almanac-pharma-services-ownership-2026.csv").then(r => r.text()),
+  fetch("data/rx-almanac-ownership-events-2024-2026.csv").then(r => r.text())
+]).then(([v, e]) => {
+  DATA.vendors = parseCSV(v);
+  DATA.events = parseCSV(e);
+  renderStats(); buildFilter(); render();
+}).catch(() => {
+  $("count").textContent = "Could not load the data files. Download them with the buttons above.";
+});
+</script>
+</body>
+</html>
