@@ -2,7 +2,7 @@
 
 Version 2026.1. Snapshot date: 2026-10-04. DOI: https://doi.org/10.5281/zenodo.23137792
 
-**Browse and search the data online:** https://hoytgong.github.io/rxalmanac-ownership-dataset/
+**Browse and search the data online:** https://rxalmanac.github.io/ownership-dataset-2026/
 
 **Download:** [`data/rx-almanac-pharma-services-ownership-2026.csv`](data/rx-almanac-pharma-services-ownership-2026.csv) (295 vendors) and [`data/rx-almanac-ownership-events-2024-2026.csv`](data/rx-almanac-ownership-events-2024-2026.csv) (35 events). The same files are archived on Zenodo under the DOI above, which is the version to cite.
 

@@ -6,6 +6,7 @@ version: "2026.1"
 date-released: "2026-10-04"
 doi: "10.5281/zenodo.23137792"
 url: "https://rxalmanac.com/articles/who-owns-pharma-services-2026/"
+repository-code: "https://github.com/rxalmanac/ownership-dataset-2026"
 license: CC-BY-NC-4.0
 authors:
   - name: "Rx Almanac"
